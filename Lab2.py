@@ -41,5 +41,15 @@ def main():
     print(f"Sorted Temperatures: {sorted_list}")
     print(f"Median Temperature: {median:.2f}")
 
+def calc_median_temperature(temp_list):
+    sorted_list = sorted(temp_list)
+    n = len(sorted_list)
+    mid = n // 2
+    if n % 2 == 0:
+        median = (sorted_list[mid - 1] + sorted_list[mid]) / 2
+    else:
+        median = sorted_list[mid]
+    return median
+
 if __name__ == "__main__":
     main()
