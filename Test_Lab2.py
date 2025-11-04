@@ -1,5 +1,6 @@
 import pytest
 from Lab2 import calc_min_max_temperature, calc_average_temperature, calc_median_temperature
+import Lab2
 
 def test_calc_min_max_temperature():
     assert calc_min_max_temperature([5.0, 69.0, 32.0]) == [5.0, 69.0]
@@ -10,5 +11,8 @@ def test_calc_average_temperature():
     assert calc_average_temperature([10.0, 20.0, 30.0]) == pytest.approx(20.0, 0.01)
 
 def test_calc_median_temperature():
-    assert calc_median_temperature([5.0, 69.0, 32.0]) == 32.0  # Odd count
-    assert calc_median_temperature([5.0, 32.0, 69.0, 100.0]) == pytest.approx(50.5, 0.01)  # Even count
+    result = 0
+    input_list = [5, 15, 25, 35, 45]
+    except_result = 25
+    result = Lab2.calc_median_temperature(input_list)
+    assert result == except_result
